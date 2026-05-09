@@ -1,0 +1,230 @@
+/* Layout Styles */
+
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--dp-background);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  background-color: var(--dp-primary-dark);
+  color: var(--dp-white);
+  padding: var(--spacing-lg) 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  box-shadow: var(--shadow-lg);
+  overflow-y: auto;
+  transition: transform var(--transition-base);
+  z-index: 1030;
+}
+
+.sidebar.closed {
+  transform: translateX(-280px);
+}
+
+.sidebar-brand {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.sidebar-brand i {
+  font-size: 1.75rem;
+  color: var(--dp-primary-light);
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav-item {
+  margin: 0.25rem 0.5rem;
+}
+
+.sidebar-nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.sidebar-nav-link i {
+  min-width: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.sidebar-nav-link:hover {
+  background-color: rgba(69, 163, 255, 0.1);
+  color: var(--dp-white);
+}
+
+.sidebar-nav-link.active {
+  background-color: var(--dp-primary);
+  color: var(--dp-white);
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  margin-left: 280px;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left var(--transition-base);
+}
+
+.main-content.full-width {
+  margin-left: 0;
+}
+
+/* Navbar */
+.navbar-custom {
+  background-color: var(--dp-white);
+  border-bottom: 1px solid var(--dp-border);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.navbar-start {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.navbar-toggle {
+  background: none;
+  border: none;
+  color: var(--dp-primary-dark);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: none;
+}
+
+.navbar-title {
+  font-weight: 600;
+  color: var(--dp-primary-dark);
+  margin: 0;
+}
+
+.navbar-end {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.navbar-icon-btn {
+  background: none;
+  border: none;
+  color: var(--dp-text-light);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.navbar-icon-btn:hover {
+  color: var(--dp-primary);
+}
+
+.navbar-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ef4444;
+  color: white;
+  font-size: 0.65rem;
+  padding: 0.15rem 0.35rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.navbar-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--dp-primary), var(--dp-primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* Content Area */
+.content {
+  flex: 1;
+  padding: var(--spacing-2xl);
+  overflow-y: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .main-content:not(.full-width) {
+    margin-left: 240px;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-title {
+    font-size: 1rem;
+  }
+
+  .content {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  .navbar-custom {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .navbar-end {
+    gap: var(--spacing-sm);
+  }
+
+  .navbar-icon-btn {
+    font-size: 1.1rem;
+  }
+
+  .content {
+    padding: var(--spacing-md);
+  }
+}

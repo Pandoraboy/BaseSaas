@@ -1,0 +1,322 @@
+/* Dashboard Styles */
+
+.dashboard-header {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dp-primary-dark);
+  margin-bottom: var(--spacing-md);
+}
+
+.dashboard-subtitle {
+  font-size: 0.95rem;
+  color: var(--dp-text-light);
+}
+
+/* Statistics Section */
+.statistics-section {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* Statistics Card */
+.statistics-card {
+  background-color: var(--dp-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: 1px solid var(--dp-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.statistics-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.statistics-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--dp-primary), var(--dp-primary-light));
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+}
+
+.card-title {
+  font-size: 0.85rem;
+  color: var(--dp-text-light);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--dp-primary-light), var(--dp-primary));
+  color: var(--dp-white);
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dp-primary-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.85rem;
+}
+
+.card-change {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 600;
+}
+
+.card-change.positive {
+  color: #10b981;
+}
+
+.card-change.negative {
+  color: #ef4444;
+}
+
+.card-change-icon {
+  font-size: 0.9rem;
+}
+
+.card-change-text {
+  color: var(--dp-text-light);
+  font-weight: 400;
+}
+
+/* Services Section */
+.services-section {
+  margin-top: var(--spacing-2xl);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dp-primary-dark);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.section-title i {
+  color: var(--dp-primary);
+  font-size: 1.75rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Service Card */
+.service-card {
+  background-color: var(--dp-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--dp-border);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--dp-primary-light);
+}
+
+.service-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.service-icon-box {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.service-icon-box.primary {
+  background: linear-gradient(135deg, var(--dp-primary), var(--dp-primary-light));
+  color: var(--dp-white);
+}
+
+.service-icon-box.secondary {
+  background: linear-gradient(135deg, var(--dp-primary-light), #45B7FF);
+  color: var(--dp-white);
+}
+
+.service-icon-box.tertiary {
+  background: linear-gradient(135deg, #E0F2FE, #B3E5FC);
+  color: var(--dp-primary);
+}
+
+.service-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dp-primary-dark);
+  margin: 0;
+}
+
+.service-subtitle {
+  font-size: 0.8rem;
+  color: var(--dp-text-light);
+  margin: 0;
+}
+
+.service-description {
+  color: var(--dp-text-light);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1;
+}
+
+.service-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--dp-border);
+}
+
+.service-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-badge.active {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.inactive {
+  background-color: #fee2e2;
+  color: #7f1d1d;
+}
+
+.service-arrow {
+  color: var(--dp-primary);
+  font-size: 1.25rem;
+  transition: transform var(--transition-fast);
+}
+
+.service-card:hover .service-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 1.5rem;
+  }
+
+  .statistics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-title {
+    font-size: 1.25rem;
+  }
+
+  .statistics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .statistics-card {
+    padding: var(--spacing-md);
+  }
+
+  .service-card {
+    padding: var(--spacing-md);
+  }
+
+  .card-value {
+    font-size: 1.5rem;
+  }
+
+  .service-card-header {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .service-description {
+    font-size: 0.85rem;
+  }
+}
